@@ -246,7 +246,7 @@ body {
 
 .app-footer {
   position: fixed;
-  bottom: 10px;
+  bottom: 70px;
   left: 0;
   width: 100%;
   text-align: center;
@@ -263,7 +263,7 @@ body {
 
 .app-footer.opened {
   position: relative;
-  margin-top: 30px;
+  margin-top: -30px;
   bottom: auto;
   pointer-events: auto;
   z-index: auto;
