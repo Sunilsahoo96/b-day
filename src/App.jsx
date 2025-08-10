@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaEnvelopeOpenText } from "react-icons/fa";
-import "./App.css";
+import "./App.css"; // Include the CSS below in this file or your stylesheet
 import logo from "./assets/sir.png";
 import c_logo from "./assets/sanvima_logo.png";
-import audio from "./assets/audio.mp3"
+import audio from "./assets/audio.mp3";
 
 export default function App() {
   const [opened, setOpened] = useState(false);
@@ -18,7 +18,7 @@ export default function App() {
     companyName: "Sanvima Solutions",
   };
 
-  function cardOpen(){
+  function cardOpen() {
     setOpened(true);
   }
 
@@ -53,7 +53,7 @@ export default function App() {
 
   return (
     <div className="main-bg min-vh-100 position-relative overflow-hidden">
-      {/* Company Logo always visible in the same place */}
+      {/* Company Logo always visible */}
       <div className="company-logo-container">
         <img
           src={birthdayData.logoUrl}
@@ -63,14 +63,14 @@ export default function App() {
       </div>
 
       {!opened ? (
-        // ENVELOPE SCREEN
+        // ENVELOPE SCREEN with bounce animation
         <div
           className="d-flex flex-column justify-content-center align-items-center"
           style={{ height: "100vh" }}
         >
           <div
-            className={`envelope-wrapper ${opened ? "opened" : ""}`}
-            onClick={() => setOpened(true)}
+            className={`envelope-wrapper ${opened ? "opened" : "bouncing"}`}
+            onClick={cardOpen}
             style={{ cursor: "pointer" }}
           >
             <div className="envelope">
@@ -111,14 +111,10 @@ export default function App() {
                 width: `${Math.random() * 8 + 5}px`,
                 height: `${Math.random() * 8 + 5}px`,
                 backgroundColor:
-                  balloonColors[
-                    Math.floor(Math.random() * balloonColors.length)
-                  ],
+                  balloonColors[Math.floor(Math.random() * balloonColors.length)],
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                animation: `confettiFall ${
-                  Math.random() * 3 + 2
-                }s linear infinite`,
+                animation: `confettiFall ${Math.random() * 3 + 2}s linear infinite`,
                 animationDelay: `${Math.random() * 2}s`,
               }}
             ></div>
@@ -173,25 +169,20 @@ export default function App() {
               <p className="special-text mt-3" style={{ textAlign: "justify" }}>
                 {birthdayData.message}
               </p>
-              <p className="special-text small mt-3">
-                💙– Team Sanvima Solutions
-              </p>
+              <p className="special-text small mt-3">💙– Team Sanvima Solutions</p>
             </div>
           </div>
         </div>
       )}
 
-      {/* Footer always visible */}
-      <footer className="app-footer">
+      {/* Footer with position toggle */}
+      <footer className={`app-footer ${opened ? "opened" : ""}`}>
         <p>Made with ❤️ by Sunil</p>
       </footer>
 
       {/* Music */}
       <audio ref={audioRef} loop autoPlay>
-        <source
-          src={audio}
-          type="audio/mpeg"
-        />
+        <source src={audio} type="audio/mpeg" />
       </audio>
     </div>
   );
