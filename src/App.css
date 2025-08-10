@@ -238,3 +238,14 @@ body {
   z-index: 1100;
   font-family: 'Montserrat', sans-serif;
 }
+
+@media (max-width: 768px) {
+  /* Push the content below the logo */
+  .celebration-container {
+    padding-top: 140px; /* height of logo + some gap */
+  }
+   .app-footer {
+    position: relative;
+    margin-top: 30px; /* spacing from content */
+  }
+}
