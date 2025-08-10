@@ -14,6 +14,11 @@ body {
   background: #f7f1e1;
   min-height: 100vh;
   position: relative;
+  transition: padding-top 0.5s ease;
+}
+
+.main-bg.with-logo-gap {
+  padding-top: 30px; /* space below logo when opened */
 }
 
 .company-logo-container {
@@ -22,7 +27,12 @@ body {
   left: 20px;
   z-index: 1000;
   width: 120px;
-  height: auto;
+  height: 100px;
+  transition: margin-bottom 0.5s ease;
+}
+
+.company-logo-container.with-gap {
+  margin-bottom: 100px; /* gap below logo when opened */
 }
 
 .company-logo {

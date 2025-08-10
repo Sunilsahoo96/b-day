@@ -23,21 +23,9 @@ export default function App() {
   }
 
   const balloonColors = [
-    "#ff4d6d",
-    "#2ecc71",
-    "#f39c12",
-    "#9b59b6",
-    "#3498db",
-    "#e74c3c",
-    "#1abc9c",
-    "#ff66cc",
-    "#00b4d8",
-    "#ffd60a",
-    "#ff7b00",
-    "#8338ec",
-    "#06d6a0",
-    "#ef476f",
-    "#ff9f1c",
+    "#ff4d6d", "#2ecc71", "#f39c12", "#9b59b6", "#3498db",
+    "#e74c3c", "#1abc9c", "#ff66cc", "#00b4d8", "#ffd60a",
+    "#ff7b00", "#8338ec", "#06d6a0", "#ef476f", "#ff9f1c",
   ];
 
   useEffect(() => {
@@ -52,9 +40,9 @@ export default function App() {
   }, [opened]);
 
   return (
-    <div className="main-bg min-vh-100 position-relative overflow-hidden">
-      {/* Company Logo always visible */}
-      <div className="company-logo-container">
+    <div className={`main-bg min-vh-100 position-relative overflow-hidden ${opened ? "with-logo-gap" : ""}`}>
+      {/* Company Logo with gap toggle */}
+      <div className={`company-logo-container ${opened ? "with-gap" : ""}`}>
         <img
           src={birthdayData.logoUrl}
           alt="Company Logo"
@@ -175,7 +163,7 @@ export default function App() {
         </div>
       )}
 
-      {/* Footer with position toggle */}
+      {/* Footer with fixed or relative position based on opened state */}
       <footer className={`app-footer ${opened ? "opened" : ""}`}>
         <p>Made with ❤️ by Sunil</p>
       </footer>
