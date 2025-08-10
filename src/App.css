@@ -18,7 +18,7 @@ body {
 }
 
 .main-bg.with-logo-gap {
-  padding-top: 30px; /* space below logo when opened */
+  padding-top: 50px; /* space below logo when opened */
 }
 
 .company-logo-container {
@@ -27,7 +27,7 @@ body {
   left: 20px;
   z-index: 1000;
   width: 120px;
-  height: 100px;
+  height: auto;
   transition: margin-bottom 0.5s ease;
 }
 
@@ -247,6 +247,7 @@ body {
 .app-footer {
   position: fixed;
   bottom: 10px;
+  left: 0;
   width: 100%;
   text-align: center;
   font-size: 0.9rem;
@@ -254,9 +255,10 @@ body {
   font-weight: 500;
   user-select: none;
   pointer-events: none;
-  z-index: 1100;
+  z-index: 9999; /* high to appear above envelope */
   font-family: 'Montserrat', sans-serif;
   transition: all 0.5s ease;
+  background: transparent;
 }
 
 .app-footer.opened {
@@ -264,6 +266,7 @@ body {
   margin-top: 30px;
   bottom: auto;
   pointer-events: auto;
+  z-index: auto;
 }
 
 @media (max-width: 768px) {
@@ -272,6 +275,6 @@ body {
   }
   .app-footer {
     position: relative;
-    margin-top: -30px;
+    margin-top: 30px;
   }
 }
