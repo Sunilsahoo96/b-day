@@ -242,7 +242,7 @@ body {
 @media (max-width: 768px) {
   /* Push the content below the logo */
   .celebration-container {
-    padding-top: 140px; /* height of logo + some gap */
+    padding-bottom: 140px; /* height of logo + some gap */
   }
    .app-footer {
     position: relative;
