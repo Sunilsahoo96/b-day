@@ -4,6 +4,7 @@ import { FaEnvelopeOpenText } from "react-icons/fa";
 import "./App.css";
 import logo from "./assets/sir.png";
 import c_logo from "./assets/sanvima_logo.png";
+import audio from "./assets/audio.mp3"
 
 export default function App() {
   const [opened, setOpened] = useState(false);
@@ -188,7 +189,7 @@ export default function App() {
       {/* Music */}
       <audio ref={audioRef} loop autoPlay>
         <source
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
+          src={audio}
           type="audio/mpeg"
         />
       </audio>
