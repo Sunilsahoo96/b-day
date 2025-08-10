@@ -212,7 +212,7 @@ body {
 .app-footer {
   position: fixed;
   left: 0; right: 0;
-  bottom: 100px;
+  bottom: 120px;
   width: 100vw;
   text-align: center;
   font-size: 0.9rem;
